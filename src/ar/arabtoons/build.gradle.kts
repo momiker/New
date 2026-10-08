@@ -1,17 +1,17 @@
+import io.github.keiyoushi.gradle.api.ContentWarning
+
 plugins {
-    id("lib-multisrc")
+    alias(kei.plugins.extension)
 }
 
-base {
-    archivesName = "arabtoons"
-}
+keiyoushi {
+    name = "ArabToons"
+    versionCode = 1
+    contentWarning = ContentWarning.NSFW
+    libVersion = "1.6"
 
-kotlin {
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(project(":lib"))
-            }
-        }
+    source {
+        lang = "ar"
+        baseUrl = "https://arabtoons.net"
     }
 }
